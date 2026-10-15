@@ -24,6 +24,7 @@ class Theater:
                 print(j.seat_label, end=" ")
             print()
 
+    # Find seat function. Automatically used inside reserve_seat. Doesn't need to be used independently.
     def find_seat(self, seat_label):
         for i in self.seats:
             for j in i:
@@ -32,16 +33,17 @@ class Theater:
         return None # Returns nothing if the seat the user typed in doesn't exist.
     
     def reserve_seat(self, seat_label):
-        chosen_seat = self.find_seat(seat_label)
+        chosen_seat = self.find_seat(seat_label) # Checks if the seat exists
 
-        if chosen_seat is None:
-            return "That seat doesn't exist. Please try again."
-        else:
-            seat_reservation_result = chosen_seat.reserve()
-            if seat_reservation_result == True:
-                return f"Reservation successful!\nSeat {seat_label} has been reserved for you."
+        while True:
+            if chosen_seat is None:
+                return "That seat doesn't exist. Please try again."
             else:
-                return f"Reservation failed!\nSeat {seat_label} is already booked. Please select a different seat."
+                seat_reservation_result = chosen_seat.reserve()
+                if seat_reservation_result == True:
+                    return f"Reservation successful!\nSeat {seat_label} has been reserved for you."
+                else:
+                    return f"Reservation failed!\nSeat {seat_label} is already booked. Please select a different seat."
 
     def cancel_reservation(self, seat_label):
         chosen_seat = self.find_seat(seat_label)
