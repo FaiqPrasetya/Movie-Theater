@@ -20,6 +20,7 @@ class Seat:
         elif self.is_reserved == False: # if the seat is not reserved. Return false.
             return False
 
-class SleeperSeat(Seat):
-    def __init__(self, seat_label):
-        super().__init__(seat_label, seat_type = "Sleeper", price = 85000) # Calls on Seat's constructor. Uses inheritance. Is only used to give a different seat type and pricing.
+# TODO: Implement different types of seats on the theater with different pricings.
+# class SleeperSeat(Seat):
+#     def __init__(self, seat_label):
+#         super().__init__(seat_label, seat_type = "Sleeper", price = 85000) # Calls on Seat's constructor. Uses inheritance. Is only used to give a different seat type and pricing.

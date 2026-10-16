@@ -56,14 +56,4 @@ class Theater:
                 return f"Cancellation successful!\nReservation of seat {seat_label} has been cancelled."
             else:
                 return f"Cancellation failed!\nSeat {seat_label} is not reserved. Please select a different seat."
-
-# TODO: Try the display seats function without implementing main.py. Just to remind myself what I was doing with the project.
-
-theater = Theater(3, 4)
-print("Welcome to the Movie Theater!\nHere are the available seats:")
-theater.display_seats()
-
-# Testing
-for row in theater.seats:
-    for seat in row:
-        print(seat.seat_label, seat.seat_type, seat.is_reserved)
+    
